@@ -37,16 +37,16 @@ bool ELEvent::loadEvent(const String& mapName,const String& stageName)
 
 		if(SName == L"talkevent")//対象の前で調べる行動を取ると発動する
 		{
-			//doorと基本的に一緒だと考えられる。ファイル名、場所、使用する画像で構成される
+			//敵と基本的に一緒だと考えられる。ファイル名、class名で構成される
 		}
 	}
 			
 	return true;
 }
 
-void ELEvent::setTalkEvent(const String& filename, const Point &setpos)
+void ELEvent::setTalkEvent(const String& filename, const String& className)
 {
-	m_setTalkEvents.emplace_back(filename,setpos);
+	m_setTalkEvents.emplace_back(filename,className);
 }
 
 void ELEvent::setAutoEvent(const String& filename, const Rect &actrect, const String &term)
@@ -102,13 +102,17 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 		//会話形式のイベント
 		for (size_t i = 0; i< m_setTalkEvents.size(); ++i)
 		{
+			//各classをeventUpdateする
+			//filename,class名で内側と外側を決める
+
+			/*
 			if (player.getRect().intersects(m_setTalkEvents[i].actRect)
 				&& Input::KeyEnter.clicked)
 			{
 				{	
 					m_actedTalkEvent = true;
 					m_eventIndex = i;
-					m_csv = CSVReader(L"data/Elis/Event/" + m_mapName + L"/" + m_setAutoEvents[i].filename + L".csv");
+					m_csv = CSVReader(L"data/Elis/Event/" + m_mapName + L"/" + m_setTalkEvents[i].filename + L".csv");
 
 					return ELPlayState::Event;
 
@@ -116,6 +120,7 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 				}
 				break;
 			}
+			*/
 		}
 	}
 

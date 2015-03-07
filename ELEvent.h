@@ -26,20 +26,28 @@ struct AutoEvent
 
 struct TalkEvent
 {
-	TalkEvent(const String &_filename,const Rect &_actRect):filename(_filename),actRect(_actRect)
+	TalkEvent(const String &_filename, const String& _classFileName) 
+		:filename(_filename), className(_classFileName)
 	{
 		//readed = false;
+	}
+
+	TalkEvent()
+	{
+
 	}
 
 	String filename;
 
 	//Point pos;
 
-	Rect actRect;
+	//Rect actRect;
 
 	//bool readed;
 
-	String term;//èåè
+	String className;
+
+	//String term;//èåè
 };
 
 class ELEvent
@@ -72,7 +80,7 @@ public:
 
 	void setAutoEvent(const String& filename, const Rect &actrect, const String &term);
 
-	void setTalkEvent(const String& filename, const Point &setpos);
+	void setTalkEvent(const String& filename, const String& className);
 
 	ELPlayState update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &mycamera, ELMap &map,ELObjectInfo &object, ELTalk &talk);
 
