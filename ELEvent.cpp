@@ -72,7 +72,7 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 		{
 			if(player.getRect().intersects(m_setAutoEvents[i].actRect))
 			{
-				int flag= false;
+				bool flag= false;
 
 				if(m_setAutoEvents[i].term.isEmpty)	flag = true;
 				else if(m_setAutoEvents[i].term == L"enemyempty")
@@ -99,9 +99,23 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 	}
 	else if (!m_setTalkEvents.empty())
 	{
-		if (m_setTalkEvents[0].rect.intersects(player.getRect))
+		//会話形式のイベント
+		for (size_t i = 0; i< m_setTalkEvents.size(); ++i)
 		{
+			if (player.getRect().intersects(m_setTalkEvents[i].actRect)
+				&& Input::KeyEnter.clicked)
+			{
+				{	
+					m_actedTalkEvent = true;
+					m_eventIndex = i;
+					m_csv = CSVReader(L"data/Elis/Event/" + m_mapName + L"/" + m_setAutoEvents[i].filename + L".csv");
 
+					return ELPlayState::Event;
+
+					//////////////////
+				}
+				break;
+			}
 		}
 	}
 

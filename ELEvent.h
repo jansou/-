@@ -26,18 +26,20 @@ struct AutoEvent
 
 struct TalkEvent
 {
-	TalkEvent(const String &_filename,const Point &_pos):filename(_filename),pos(_pos)
+	TalkEvent(const String &_filename,const Rect &_actRect):filename(_filename),actRect(_actRect)
 	{
-		readed = false;
+		//readed = false;
 	}
 
 	String filename;
 
-	Point pos;
+	//Point pos;
 
-	Rect rect;
+	Rect actRect;
 
-	bool readed;
+	//bool readed;
+
+	String term;//èåè
 };
 
 class ELEvent
