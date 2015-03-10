@@ -1,25 +1,56 @@
-﻿2015/03/07 18:42:30 にビルドを開始しました。
+﻿2015/03/10 22:10:47 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\akira\Desktop\projects\脱出ゲームを作ろう\ElisV2\ElisV2.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ELEvent.cpp Elis.cpp Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ELEvent.cpp ELEvent\EvSharkman.cpp Elis.cpp Main.cpp
          ELEvent.cpp
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
-     1>ELEvent.cpp(132): warning C4100: 'filename' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'item' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'playerpos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent.cpp(160): warning C4100: 'filename' : 引数は関数の本体部で 1 度も参照されません。
+         EvSharkman.cpp
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\elevent\EvBase.h(21): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\elevent\EvBase.h(21): warning C4100: 'item' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\elevent\EvBase.h(21): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\elevent\EvBase.h(21): warning C4100: 'playerpos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\elevent\EvBase.h(21): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(50): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(50): warning C4100: 'item' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(50): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(50): warning C4100: 'playerpos' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(50): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(169): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(169): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
+     1>ELEvent\EvSharkman.cpp(175): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
          Elis.cpp
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'item' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'playerpos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
          Main.cpp
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELBlock.h(38): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'foot' : 引数は関数の本体部で 1 度も参照されません。
      1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELObject\ELMagicBlock.h(39): warning C4100: 'head' : 引数は関数の本体部で 1 度も参照されません。
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\RC.res" RC.rc 
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'camerapos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'item' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'object' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'playerpos' : 引数は関数の本体部で 1 度も参照されません。
+     1>c:\users\akira\desktop\projects\脱出ゲームを作ろう\elisv2\ELEvent\EvBase.h(21): warning C4100: 'map' : 引数は関数の本体部で 1 度も参照されません。
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\akira\Desktop\projects\脱出ゲームを作ろう\Release\ElisV2.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\akira\Desktop\projects\脱出ゲームを作ろう\Release\ElisV2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\akira\Desktop\projects\脱出ゲームを作ろう\Release\ElisV2.lib" /MACHINE:X86 /SAFESEH Release\RC.res
          Release\ELAttack.obj
@@ -44,6 +75,7 @@
          Release\ELSlimeW.obj
          Release\ELTentacle.obj
          Release\ELEvent.obj
+         Release\EvSharkman.obj
          Release\ELFade.obj
          Release\Elis.obj
          Release\ELItem.obj
@@ -80,4 +112,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:36.93
+経過時間 00:00:40.17

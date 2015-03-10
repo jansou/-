@@ -6,6 +6,10 @@
 # include "ELMyCursor.h"
 # include "ELMyCamera.h"
 # include "ELTalk.h"
+# include "ELItem.h"
+
+# include "ELEvent\EvBase.h"
+# include "ELEvent\EvSharkman.h"
 
 struct AutoEvent
 {
@@ -55,7 +59,8 @@ class ELEvent
 private:
 	std::vector<AutoEvent> m_setAutoEvents;
 
-	std::vector<TalkEvent> m_setTalkEvents;
+	//std::vector<TalkEvent> m_setTalkEvents;
+	std::vector< std::shared_ptr<EvBase> > m_setTalkEvents;
 
 	ELPlayState actEvent(
 		const String &filename, ELPlayer &player, 
@@ -80,11 +85,13 @@ public:
 
 	void setAutoEvent(const String& filename, const Rect &actrect, const String &term);
 
-	void setTalkEvent(const String& filename, const String& className);
+	void setTalkEvent(const String& className, const String& filename, const Point& pos);
 
-	ELPlayState update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &mycamera, ELMap &map,ELObjectInfo &object, ELTalk &talk);
+	ELPlayState update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &mycamera, ELMap &map, ELObjectInfo &object, ELTalk &talk, ELItem &item);
 
 	void clearEvents();
 
 	void draw(Point camerapos);
+
+	void evDraw()const;
 };

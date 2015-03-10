@@ -33,6 +33,7 @@
     <ClCompile Include="ELEnemy\ELSlimeW.cpp" />
     <ClCompile Include="ELEnemy\ELTentacle.cpp" />
     <ClCompile Include="ELEvent.cpp" />
+    <ClCompile Include="ELEvent\EvSharkman.cpp" />
     <ClCompile Include="ELFade.cpp" />
     <ClCompile Include="Elis.cpp" />
     <ClCompile Include="ELItem.cpp" />
@@ -201,6 +202,8 @@
     <ClInclude Include="ELEnemy\ELSlimeW.h" />
     <ClInclude Include="ELEnemy\ELTentacle.h" />
     <ClInclude Include="ELEvent.h" />
+    <ClInclude Include="ELEvent\EvBase.h" />
+    <ClInclude Include="ELEvent\EvSharkman.h" />
     <ClInclude Include="ELFade.h" />
     <ClInclude Include="Elis.hpp" />
     <ClInclude Include="ELItem.h" />

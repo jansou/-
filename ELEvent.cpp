@@ -38,15 +38,23 @@ bool ELEvent::loadEvent(const String& mapName,const String& stageName)
 		if(SName == L"talkevent")//対象の前で調べる行動を取ると発動する
 		{
 			//敵と基本的に一緒だと考えられる。ファイル名、class名で構成される
+			const String className = csv.get<String>(i, 1).lower();
+			const String csvFilename = csv.get<String>(i, 2).lower();
+			const Point pos(csv.get<int>(i, 3),csv.get<int>(i,4));
+
+			setTalkEvent(className, mapName + L"/" + csvFilename, pos);
 		}
 	}
 			
 	return true;
 }
 
-void ELEvent::setTalkEvent(const String& filename, const String& className)
+void ELEvent::setTalkEvent(const String& className, const String& filename, const Point& pos)
 {
-	m_setTalkEvents.emplace_back(filename,className);
+	if (className == L"sharkman")
+	{
+		m_setTalkEvents.emplace_back(std::make_shared<EvSharkman>(filename, pos));
+	}
 }
 
 void ELEvent::setAutoEvent(const String& filename, const Rect &actrect, const String &term)
@@ -54,8 +62,19 @@ void ELEvent::setAutoEvent(const String& filename, const Rect &actrect, const St
 	m_setAutoEvents.emplace_back(filename,actrect,term);
 }
 
-ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &mycamera, ELMap &map,ELObjectInfo &object, ELTalk &talk)
+ELPlayState ELEvent::update(
+	ELPlayer &player, ELEnemyInfo &enemy,
+	ELMyCamera &mycamera, ELMap &map,
+	ELObjectInfo &object, ELTalk &talk,
+	ELItem &item)
 {
+	for (size_t i = 0; i< m_setTalkEvents.size(); ++i)
+	{
+		m_setTalkEvents[i]->update(
+			map, player.getPlayerPos()
+			, object, item, mycamera.getCameraPos());
+	}
+
 
 	if(m_actedAutoEvent)
 	{
@@ -63,7 +82,17 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 	}
 	else if(m_actedTalkEvent)
 	{
-		return actEvent(m_setTalkEvents[m_eventIndex].filename, player, object, mycamera, map, enemy,talk);
+		
+		if (m_setTalkEvents[m_eventIndex]->evUpdate(
+			map, player.getPlayerPos()
+			, object, item, mycamera.getCameraPos()))
+			return ELPlayState::Event;
+		else
+		{
+			m_actedTalkEvent = false;
+			return ELPlayState::Playing;
+		}
+		//return actEvent(m_setTalkEvents[m_eventIndex].filename, player, object, mycamera, map, enemy,talk);
 	}
 
 	if(!m_setAutoEvents.empty())
@@ -105,14 +134,14 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 			//各classをeventUpdateする
 			//filename,class名で内側と外側を決める
 
-			/*
-			if (player.getRect().intersects(m_setTalkEvents[i].actRect)
+			
+			if (player.getRect().intersects(m_setTalkEvents[i]->getHitRect())
 				&& Input::KeyEnter.clicked)
 			{
 				{	
 					m_actedTalkEvent = true;
 					m_eventIndex = i;
-					m_csv = CSVReader(L"data/Elis/Event/" + m_mapName + L"/" + m_setTalkEvents[i].filename + L".csv");
+					//m_csv = CSVReader(L"data/Elis/Event/" + m_mapName + L"/" + m_setTalkEvents[i].filename + L".csv");
 
 					return ELPlayState::Event;
 
@@ -120,10 +149,9 @@ ELPlayState ELEvent::update(ELPlayer &player, ELEnemyInfo &enemy, ELMyCamera &my
 				}
 				break;
 			}
-			*/
+			
 		}
 	}
-
 
 	return ELPlayState::Playing;
 }
@@ -293,5 +321,21 @@ void ELEvent::draw(Point camerapos)
 	{
 		Rect(m_setAutoEvents[i].actRect.pos-camerapos,
 			m_setAutoEvents[i].actRect.size).draw(Palette::Red);
+	}
+
+	for (size_t i = 0; i < m_setTalkEvents.size(); ++i)
+	{
+		m_setTalkEvents[i]->draw(camerapos);
+	}
+}
+
+void ELEvent::evDraw()const
+{
+	if (m_actedTalkEvent)
+	{
+		for (size_t i = 0; i < m_setTalkEvents.size(); ++i)
+		{
+			m_setTalkEvents[i]->evDraw();
+		}
 	}
 }

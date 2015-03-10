@@ -70,6 +70,12 @@
     <Filter Include="ソース ファイル\Shoot">
       <UniqueIdentifier>{df9cbfba-19d0-43e2-8ac8-6afa2127157c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Event">
+      <UniqueIdentifier>{79f0a712-5330-4a49-b8f6-866d58a4f98a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Event">
+      <UniqueIdentifier>{a6a65645-8d67-488b-80a3-f79493463411}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -224,6 +230,9 @@
     </ClCompile>
     <ClCompile Include="ELShoot\ELLongIce.cpp">
       <Filter>ソース ファイル\Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="ELEvent\EvSharkman.cpp">
+      <Filter>ソース ファイル\Event</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -699,6 +708,12 @@
     </ClInclude>
     <ClInclude Include="ELShoot\ELLongIce.h">
       <Filter>ヘッダー ファイル\Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="ELEvent\EvBase.h">
+      <Filter>ヘッダー ファイル\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="ELEvent\EvSharkman.h">
+      <Filter>ヘッダー ファイル\Event</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

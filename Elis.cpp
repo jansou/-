@@ -26,6 +26,8 @@ void Elis::playingDraw()
 
 	objectInfo.draw(mycamera.getCameraPos());
 
+	elEvent.draw(mycamera.getCameraPos());
+
 	enemyInfo.draw(mycamera.getCameraPos());
 
 	item.draw(mycamera.getCameraPos());
@@ -33,6 +35,8 @@ void Elis::playingDraw()
 	player.draw(mycamera.getCameraPos());
 
 	attack.draw(mycamera.getCameraPos());
+
+	elEvent.evDraw();
 }
 
 bool Elis::loadData(const String& mapName,const String& stageName)
@@ -339,7 +343,7 @@ bool Elis::update()
 
 							if(m_playState != ELPlayState::GameOver)
 							{
-								m_playState = elEvent.update(player,enemyInfo,mycamera,map,objectInfo,talk);
+								m_playState = elEvent.update(player,enemyInfo,mycamera,map,objectInfo,talk,item);
 
 								if(m_playState == ELPlayState::Event)
 									attack.clearShoots();
@@ -444,7 +448,7 @@ bool Elis::update()
 				{
 					//map.BGMupdate(player.getState());
 
-					m_playState = elEvent.update(player,enemyInfo,mycamera,map,objectInfo,talk);
+					m_playState = elEvent.update(player,enemyInfo,mycamera,map,objectInfo,talk,item);
 
 					playingDraw();
 
